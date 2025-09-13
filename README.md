@@ -40,6 +40,14 @@ scenarios = [
 
 What we gain?
 
+| Scenario                   | Test Accuracy | # Updates / epoch | Accuracy Drop vs Baseline |
+|----------------------------|---------------|-------------------|---------------------------|
+| Baseline (All updates)     | 0.56          | 50,048            | 0.00                      |
+| Leaders only (≈31%)        | 0.51          | 15,640            | -0.05                     |
+| Leaders + Independents 10% | 0.53          | 19,550            | -0.03                     |
+| Leaders + Independents 20% | 0.53          | 21,505            | -0.03                     |
+| Leaders + Independents 30% | 0.52          | 29,325            | -0.04                     |
+
 Fewer updates → Reduced compute
 
 Faster training
