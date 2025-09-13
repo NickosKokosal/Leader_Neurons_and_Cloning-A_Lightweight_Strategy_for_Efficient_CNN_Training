@@ -162,12 +162,12 @@ def evaluate(model, test_loader):
     return accuracy
 
 scenarios = [
-    {"desc": "baseline training", "leaders": 0, "independents": 0, "clone": False},
-    {"desc": "leaders only", "leaders": 20 , "independents": 0, "clone": True},
-    {"desc": "leaders + independents", "leaders": 30, "independents": 10, "clone": True},  # 40
-    {"desc": "leaders + independents", "leaders": 40, "independents": 15, "clone": True},  # 55
-    {"desc": "leaders + independents", "leaders": 45, "independents": 19, "clone": True},  # 64
-    {"desc": "leaders + independents", "leaders": 50, "independents": 10, "clone": True},  # 60
+    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
+    {"desc": "(2)leaders only", "leaders": 20 , "independents": 0, "clone": True},
+    {"desc": "(3)leaders + independents", "leaders": 30, "independents": 10, "clone": True},  # 40
+    {"desc": "(4)leaders + independents", "leaders": 25, "independents": 19, "clone": True},  # 44
+    {"desc": "(5)leaders + independents", "leaders": 40, "independents": 15, "clone": True},  # 55
+    {"desc": "(6)leaders + independents", "leaders": 50, "independents": 10, "clone": True},  # 60
 ]
 
 all_histories = []
