@@ -28,6 +28,9 @@ Experimental Scenarios
 
 Six different training scenarios were evaluated on the CIFAR-100 dataset:
 
+2 CNN Versions
+
+With 64 channels
 
 scenarios = [
     {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
@@ -38,7 +41,18 @@ scenarios = [
     {"desc": "(6)leaders + independents", "leaders": 50, "independents": 10, "clone": True},  # 60
 ]
 
-What we gain?
+With 128 channels
+
+scenarios = [
+    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
+    {"desc": "(2)leaders only", "leaders": 40 , "independents": 0, "clone": True},
+    {"desc": "(3)leaders + independents", "leaders": 40, "independents": 10, "clone": True},  # 50
+    {"desc": "(4)leaders + independents", "leaders": 35, "independents": 20, "clone": True},  # 55
+    {"desc": "(5)leaders + independents", "leaders": 50, "independents": 25, "clone": True},  # 75
+    {"desc": "(6)leaders + independents", "leaders": 60, "independents": 30, "clone": True},  # 90
+]
+
+What we gain with the 128 channels version?
 
 | Scenario                   | Test Accuracy | # Updates / epoch | Accuracy Drop vs Baseline |
 |----------------------------|---------------|-------------------|---------------------------|
