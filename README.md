@@ -18,6 +18,7 @@ and then cloning their learned weights to the remaining neurons and in parallel 
 The approach aims to preserve model accuracy while significantly lowering the number of training updates—saving time and energy.
 
 Key Concepts
+
 Elected Leaders: A subset of neurons (e.g. filters) are selected to act as "leaders" during training.
 Weight Cloning: Once trained, leader weights are copied to non-leader neurons, reducing redundant computations.
 Independent Neurons : Some neurons are allowed to train freely alongside the leaders to introduce diversity.
