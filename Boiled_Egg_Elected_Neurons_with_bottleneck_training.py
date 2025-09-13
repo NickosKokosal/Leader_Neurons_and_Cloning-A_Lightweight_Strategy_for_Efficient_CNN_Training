@@ -11,7 +11,7 @@ import time
 
 # Επιλογή συσκευής
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"✔️ Χρησιμοποιούμε συσκευή: {device}")
+print(f"Χρησιμοποιούμε συσκευή: {device}")
 
 # Μετασχηματισμοί για CIFAR-100
 transform = transforms.Compose([
