@@ -52,7 +52,7 @@ scenarios = [
     {"desc": "(6)leaders + independents", "leaders": 60, "independents": 30, "clone": True},  # 90
 ]
 
-What we gain with the 128 channels version?
+128 channels results with CIFAR-100:
 
 | Scenario                 | Test Accuracy |Updates / epoch |Accuracy Drop vs Baseline |
 |--------------------------|---------------|----------------|--------------------------|
@@ -62,6 +62,32 @@ What we gain with the 128 channels version?
 | Leaders + Independents   | 0.53          | 21,505         | -0.03                    |
 | Leaders + Independents   | 0.52          | 29,325         | -0.04                    |
 | Leaders + Independents   | 0.53          | 35,190         | -0.03                    |
+
+Six different training scenarios were evaluated on the MNIST dataset:
+
+
+
+scenarios = [
+    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
+    {"desc": "(2)leaders only", "leaders": 40 , "independents": 0, "clone": True},
+    {"desc": "(3)leaders + independents", "leaders": 40, "independents": 10, "clone": True},  # 50
+    {"desc": "(4)leaders + independents", "leaders": 35, "independents": 20, "clone": True},  # 55
+    {"desc": "(5)leaders + independents", "leaders": 50, "independents": 25, "clone": True},  # 75
+    {"desc": "(6)leaders + independents", "leaders": 60, "independents": 30, "clone": True},  # 90
+]
+
+128 channels results with MNIST:
+
+| # |Scenario                 |Updates per Epoch |Epochs |Test Accuracy |Update Reduction |
+|---|-------------------------|------------------|-------|--------------|-----------------|
+| 1 | Baseline (All filters)  | 60,032           | 25    | 99.0%        | —               |
+| 2 | Leaders Only            | 18,760           | 25    | 99.0%        | −68.7%          |
+| 3 | Leaders + Independents  | 23,450           | 25    | 99.0%        | −60.9%          |
+| 4 | Leaders + Independents  | 25,795           | 25    | 99.0%        | −57.0%          |
+| 5 | Leaders + Independents  | 35,175           | 25    | 99.0%        | −41.4%          |
+| 6 | Leaders + Independents  | 42,210           | 25    | 99.0%        | −29.7%          |
+
+What we gain with the 128 channels version?
 
 Fewer updates → Reduced compute
 
@@ -85,7 +111,9 @@ Matplotlib
 
 Citation & Acknowledgements
 
-If you use this idea or code, please cite this repository or mention:
+I will continue trying new scenarios and CNN versions, and I will update the results.
+
+If you ever use this idea or code, please cite this repository or mention:
 
 Boiled Egg Theory: Efficient CNN Training via Leader Neuron Cloning
 Nikolaos Anastasios Kokosalakis, 2025
