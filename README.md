@@ -89,9 +89,11 @@ scenarios = [
 
 What we gain with the 128 channels version?
 
-Fewer updates → Reduced compute
+Fewer updates 
 
-Faster training
+
+We can observe that the neurons which have the role of clone don't affect or change so much the behavior of the NN.
+
 
 New neural architecture idea applicable to resource-constrained environments
 
