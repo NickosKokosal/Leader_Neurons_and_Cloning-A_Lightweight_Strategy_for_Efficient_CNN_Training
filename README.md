@@ -26,74 +26,40 @@ Bottleneck Layer: A structural addition to limit dimensionality and force featur
 
 Experimental Scenarios
 
-Six different training scenarios were evaluated on the CIFAR-100 dataset:
-
-2 CNN Versions
-
-With 64 channels
+Three different training scenarios were evaluated on the CIFAR-100 dataset:
 
 scenarios = [
-    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
-    {"desc": "(2)leaders only", "leaders": 20 , "independents": 0, "clone": True},
-    {"desc": "(3)leaders + independents", "leaders": 30, "independents": 10, "clone": True},  # 40
-    {"desc": "(4)leaders + independents", "leaders": 25, "independents": 19, "clone": True},  # 44
-    {"desc": "(5)leaders + independents", "leaders": 40, "independents": 15, "clone": True},  # 55
-    {"desc": "(6)leaders + independents", "leaders": 50, "independents": 10, "clone": True},  # 60
+    # (1) Baseline: without roles -> full conv
+    {"desc": "(1)baseline training",      "per_layer_p": None,                "clone": False},
+    # (2) Mild per-layer
+    {"desc": "(2)mild per-layer",         "per_layer_p": mild_per_layer,      "clone": True},
+    # (3) Aggresive per-layer
+    {"desc": "(3)aggressive per-layer",   "per_layer_p": aggressive_per_layer,"clone": True},
 ]
 
-With 128 channels
+
+
+
+
+Three different training scenarios were evaluated on the MNIST dataset:
 
 scenarios = [
-    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
-    {"desc": "(2)leaders only", "leaders": 40 , "independents": 0, "clone": True},
-    {"desc": "(3)leaders + independents", "leaders": 40, "independents": 10, "clone": True},  # 50
-    {"desc": "(4)leaders + independents", "leaders": 35, "independents": 20, "clone": True},  # 55
-    {"desc": "(5)leaders + independents", "leaders": 50, "independents": 25, "clone": True},  # 75
-    {"desc": "(6)leaders + independents", "leaders": 60, "independents": 30, "clone": True},  # 90
+    # (1) Baseline: without roles -> full conv
+    {"desc": "(1)baseline training",      "per_layer_p": None,                "clone": False},
+    # (2) Mild per-layer
+    {"desc": "(2)mild per-layer",         "per_layer_p": mild_per_layer,      "clone": True},
+    # (3) Aggresive per-layer
+    {"desc": "(3)aggressive per-layer",   "per_layer_p": aggressive_per_layer,"clone": True},
 ]
 
-128 channels results with CIFAR-100:
-
-| Scenario                 | Test Accuracy |Updates / epoch |Accuracy Drop vs Baseline |
-|--------------------------|---------------|----------------|--------------------------|
-| Baseline (All updates)   | 0.56          | 50,048         | 0.00                     |
-| Leaders only (≈31%)      | 0.51          | 15,640         | -0.05                    |
-| Leaders + Independents   | 0.53          | 19,550         | -0.03                    |
-| Leaders + Independents   | 0.53          | 21,505         | -0.03                    |
-| Leaders + Independents   | 0.52          | 29,325         | -0.04                    |
-| Leaders + Independents   | 0.53          | 35,190         | -0.03                    |
-
-Six different training scenarios were evaluated on the MNIST dataset:
 
 
-
-scenarios = [
-    {"desc": "(1)baseline training", "leaders": 0, "independents": 0, "clone": False},
-    {"desc": "(2)leaders only", "leaders": 40 , "independents": 0, "clone": True},
-    {"desc": "(3)leaders + independents", "leaders": 40, "independents": 10, "clone": True},  # 50
-    {"desc": "(4)leaders + independents", "leaders": 35, "independents": 20, "clone": True},  # 55
-    {"desc": "(5)leaders + independents", "leaders": 50, "independents": 25, "clone": True},  # 75
-    {"desc": "(6)leaders + independents", "leaders": 60, "independents": 30, "clone": True},  # 90
-]
-
-128 channels results with MNIST:
-
-| # |Scenario                 |Updates per Epoch |Epochs |Test Accuracy |Update Reduction |
-|---|-------------------------|------------------|-------|--------------|-----------------|
-| 1 | Baseline (All filters)  | 60,032           | 25    | 99.0%        | —               |
-| 2 | Leaders Only            | 18,760           | 25    | 99.0%        | −68.7%          |
-| 3 | Leaders + Independents  | 23,450           | 25    | 99.0%        | −60.9%          |
-| 4 | Leaders + Independents  | 25,795           | 25    | 99.0%        | −57.0%          |
-| 5 | Leaders + Independents  | 35,175           | 25    | 99.0%        | −41.4%          |
-| 6 | Leaders + Independents  | 42,210           | 25    | 99.0%        | −29.7%          |
 
 What we gain with the 128 channels version?
 
 Fewer updates 
 
-
 We can observe that the neurons which have the role of clone don't affect or change so much the behavior of the NN.
-
 
 New neural architecture idea applicable to resource-constrained environments
 
@@ -111,7 +77,7 @@ NumPy
 
 Matplotlib
 
-Citation & Acknowledgements
+Last but not least
 
 I will continue trying new scenarios and CNN versions, and I will update the results.
 
