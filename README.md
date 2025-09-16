@@ -58,11 +58,11 @@ scenarios = [
 ]
 
 
-| Scenario              | Test Accuracy | ΔAccuracy vs Baseline | Updates / Epoch | Update Reduction | Time / Epoch |
-|-----------------------|---------------|-----------------------|-----------------|------------------|--------------|
-| Baseline (no roles)   | 0.9899        | —                     | 75,200          | —                | ≈ 13.4 s     |
-| Mild %                | 0.9709        | −0.0190               | 36,895          | −50.9%           | ≈ 13.7 s     |
-| Aggressive %          | 0.9615        | −0.0284               | 29,610          | −60.6%           | ≈ 13.9 s     |
+| Scenario              | Test Accuracy | Accuracy vs Baseline | Updates / Epoch | Update Reduction | Time / Epoch |
+|-----------------------|---------------|----------------------|-----------------|------------------|--------------|
+| Baseline (no roles)   | 0.9899        | —                    | 75,200          | —                | ≈ 13.4 s     |
+| Mild %                | 0.9709        | −0.0190              | 36,895          | −50.9%           | ≈ 13.7 s     |
+| Aggressive %          | 0.9615        | −0.0284              | 29,610          | −60.6%           | ≈ 13.9 s     |
 
 What we gain?
 
