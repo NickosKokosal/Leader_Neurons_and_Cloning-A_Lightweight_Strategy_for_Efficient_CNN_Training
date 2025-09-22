@@ -64,6 +64,26 @@ scenarios = [
 | Mild %                | 0.9709        | −0.0190              | 36,895          | −50.9%           | ≈ 13.7 s     |
 | Aggressive %          | 0.9615        | −0.0284              | 29,610          | −60.6%           | ≈ 13.9 s     |
 
+
+Three different training scenarios were evaluated on the MNIST dataset:
+
+scenarios = [
+        # (1) Baseline: χωρίς ρόλους -> full conv
+        {"desc": "(1)baseline training",      "per_layer_p": None,                "clone": False},
+        # (2) Ήπιο per-layer
+        {"desc": "(2)mild per-layer",         "per_layer_p": mild_per_layer,      "clone": True},
+        # (3) Επιθετικό per-layer
+        {"desc": "(3)aggressive per-layer",   "per_layer_p": aggressive_per_layer,"clone": True},
+    ]
+
+| Scenario            | Test Accuracy | Accuracy vs Baseline | Updates / Epoch | Update Reduction | Time / Epoch |
+| ------------------- |---------------| -------------------- |-----------------|------------------|--------------|
+| Baseline (no roles) | 0.9290        | —                    | 480,256         | —                | ≈ 29.5 s     |
+| Mild %              | 0.8980        | −0.0310              | 252,791         | −47.36%          | ≈ 37.1 s     |
+| Aggressive %        | 0.8700        | −0.0590              | 144,921         | −69.82%          | ≈ 35.9 s     |
+
+
+
 What we gain?
 
 Fewer updates 
