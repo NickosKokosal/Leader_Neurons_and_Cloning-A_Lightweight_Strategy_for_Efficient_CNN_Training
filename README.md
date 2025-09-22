@@ -65,7 +65,7 @@ scenarios = [
 | Aggressive %          | 0.9615        | −0.0284              | 29,610          | −60.6%           | ≈ 13.9 s     |
 
 
-Three different training scenarios were evaluated on the MNIST dataset:
+Three different training scenarios were evaluated on the FashionMNIST dataset:
 
 scenarios = [
         # (1) Baseline: χωρίς ρόλους -> full conv
